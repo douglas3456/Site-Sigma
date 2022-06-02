@@ -1,10 +1,17 @@
 <?php
 
 $produtos = array(
-0 => array('nome'=>'capivara legal','preco'=>'1200.oo','descricao'=>'Descricao capivara legal','imagem'=>'capivaralegal.jpeg')
-1 => array('nome'=>'capivara legal','preco'=>'1200.oo','descricao'=>'Descricao capivara legal','imagem'=>'capivaralegal.jpeg')
-2 => array('nome'=>'capivara legal','preco'=>'1200.oo','descricao'=>'Descricao capivara legal','imagem'=>'capivaralegal.jpeg')
-3 => array('nome'=>'capivara legal','preco'=>'1200.oo','descricao'=>'Descricao capivara legal','imagem'=>'capivaralegal.jpeg')   
+    0 => array('nome'=>'Capivara legal ','preco'=>'2000.00','descricao'=>'capivara legal','imagem'=>'capivaralegal.JPG' )
+    1 => array('nome'=>'leão sério ','preco'=>'1500.00','descricao'=>'leão sério','imagem'=>'leãosério.jpg' )
+    2 => array('nome'=>'Cachorro soriso ','preco'=>'3000.00','descricao'=>'Cachorro sorindo','imagem'=>'cachorrosoriso.jpg' )
+    3 => array('nome'=>'Macaco Filosofo ','preco'=>'1500.00','descricao'=>'Macaco Filosofo','imagem'=>'macacofilosofo.jpg' )
+    4 => array('nome'=>'Gato Emo ','preco'=>'150.00','descricao'=>'Gato Emo','imagem'=>'gatoemo.jpeg' )
+    5 => array('nome'=>'Coelho fofo ','preco'=>'3000.00','descricao'=>'Coelho fofo','imagem'=>'coelho.jpg' )
+    6 => array('nome'=>'O grito','preco'=>'200.00','descricao'=>'O grito','imagem'=>'grito.jpg' )
+    7 => array('nome'=>'cartinha da obediência ','preco'=>'4000.00','descricao'=>'Cartinha da obediência','imagem'=>'cartinha.jpg' )
+    8 => array('nome'=>'homem vs mulher ','preco'=>'1340.00','descricao'=>'Dessespero de cada um','imagem'=>'desespero.jpg' )
+    9 => array('nome'=>'Homens ','preco'=>'100.00','descricao'=>'O pensamento do homem','imagem'=>'homens.jpg' )
+    10 => array('nome'=>'mulher ','preco'=>'300.00','descricao'=>'Mulher no volante','imagem'=>'mulher.jpg' )
 );
 
- ?>
+?>
