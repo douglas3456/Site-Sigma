@@ -7,7 +7,7 @@ include_once './includes/_header.php';
 if ( isset( $_POST['txtNome'] ) ) {
     $nome = strtoupper($_POST['txtNome'] );
     $nome = $_POST ['txtNome'];
-    echo $nome;
+    echo $nome.'<br> ';
     
 }
 if ( isset( $_POST['e-mail'] ) ) {
@@ -15,7 +15,7 @@ if ( isset( $_POST['e-mail'] ) ) {
    
 
 $email = $_POST ['e-mail'];
-echo $email;
+echo $email.'<br> ';
 }
 
 if ( isset( $_POST['telefone'] ) ) {
@@ -23,7 +23,7 @@ if ( isset( $_POST['telefone'] ) ) {
    
 
 $nome = $_POST ['telefone'];
-echo $telefone;
+echo $telefone.'<br> ';
 }
 
 if ( isset( $_POST['mensagem'] ) ) {
@@ -31,7 +31,7 @@ if ( isset( $_POST['mensagem'] ) ) {
    
 
 $nome = $_POST ['mensagem'];
-echo $mensagem;
+echo $mensagem.'<br> ';
 }
 ?>
 
@@ -43,15 +43,19 @@ echo $mensagem;
 
 <ul>
 <li>
+    
 <label for="txtNome">Nome Completo</label>
 <input type="text" name="txtNome" id="txtNome" >
 </li>
 <li>
+    
 <label for="e-mail">e-mail</label>
 <input type="text" name="e-mail" id="e-mail">
+
 </li>
 <li><label for="telefone">telefone</label>
 <input type="text" name="telefone" id="telefone" >
+
 </li>
 <li>
 <label for="mensagem">mensagem</label>
@@ -59,9 +63,11 @@ echo $mensagem;
    
 </li>
 <li>
+    
     <input type="submit" value="cadastrar">
     </li>
 </ul>
+
 </form>
 
 <?php
