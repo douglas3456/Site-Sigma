@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 07-Jul-2022 às 16:40
+-- Tempo de geração: 14-Jul-2022 às 17:28
 -- Versão do servidor: 10.4.17-MariaDB
 -- versão do PHP: 7.3.27
 
@@ -66,6 +66,18 @@ CREATE TABLE `produtos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
+-- Extraindo dados da tabela `produtos`
+--
+
+INSERT INTO `produtos` (`produtoID`, `Nome`, `Descricao`, `imagem`, `preco`, `CategoriaID`, `Ativo`) VALUES
+(1, 'capivara legal', 'capivara legal', 'capivaralegal.JPG', 1200, 1, 1),
+(2, 'leão sério ', 'leão sério', 'leãosério.jpg', 15000, 1, 1),
+(3, 'Cachorro soriso', 'cachorro sorrindo', 'cachorrosoriso.jpg', 3000, 1, 1),
+(4, 'Macaco filosofo', 'Macaco filosofo', 'macacofilosofo.jpg', 150000, 1, 1),
+(5, 'Gato Emo', 'Gato Emo', 'gatoemo.jpeg', 15000, 1, 1),
+(6, 'Coelho fofo ', 'Coelho fofo ', 'coelho.jpg', 3000, 1, 1);
+
+--
 -- Índices para tabelas despejadas
 --
 
@@ -95,7 +107,7 @@ ALTER TABLE `categorias`
 -- AUTO_INCREMENT de tabela `produtos`
 --
 ALTER TABLE `produtos`
-  MODIFY `produtoID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `produtoID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
