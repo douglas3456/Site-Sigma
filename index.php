@@ -16,6 +16,7 @@ $sql = "SELECT * FROM categorias WHERE Ativo = 1";
 $exec = mysqli_query($conn,$sql);
 
 
+
 //Informar a quantidade de registros de dados
 $numProdutos = mysqli_num_rows($exec);
 
