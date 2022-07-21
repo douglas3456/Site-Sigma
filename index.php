@@ -12,7 +12,7 @@ include_once './includes/_header.php';
 <div class="row mt-5">
 
 <?php
-$sql = "SELECT * FROM categorias WHERE Ativo = 1";
+$sql = "SELECT * FROM produtos WHERE Ativo = 1 ORDER BY RAND() LIMIT 3";
 $exec = mysqli_query($conn,$sql);
 
 
@@ -20,27 +20,16 @@ $exec = mysqli_query($conn,$sql);
 //Informar a quantidade de registros de dados
 $numProdutos = mysqli_num_rows($exec);
 
-
 //percorre todos os dados extraidos do banco
 while ($dados = mysqli_fetch_assoc($exec) ) {
-  echo '<h1>'.$dados['Nome'].'</h1>';
-
-}
-
-
-?>
-  
-  <?php
-for ($i=0; $i < 3 ; $i++) {
-
   ?>
 
     <div class="card m-3" style="width: 18rem;">
-  <img class="card-img-top" src="./content/<?php echo $produtos [$i]['imagem'];?>" alt="Imagem de capa do card">
+  <img class="card-img-top" src="./content/<?php echo $dados ['imagem'];?>" alt="Imagem de capa do card">
   <div class="card-body">
-    <h5 class="card-title"><?php echo $produtos [$i] ['nome'];?></h5>
-    <p class="card-text"><?php echo $produtos [$i] ['descricao'];?></p>
-    <a href="produto-detalhe.php?id=<?php echo $i;?>&tipo=promocao" class="btn btn-primary">comprar</a>
+    <h5 class="card-title"><?php echo $dados  ['Nome'];?></h5>
+    <p class="card-text"><?php echo $dados ['Descricao'];?></p>
+    <a href="produto-detalhe.php?id=<?php echo $dados['ProdutoID'];?>&tipo=promocao" class="btn btn-primary">comprar</a>
   </div>
 </div>
 
