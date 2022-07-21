@@ -33,9 +33,24 @@ include_once './_menu.php';
          <tr>
         <td><?php echo $dado ['CategoriaID'];?></td> 
         <td> <a href="categoria-salvar.php?acao=salvar&id=<?php echo $dado['CategoriaID'];?>"><?php echo $dado['Nome'];?></td>
-        </tr>
-    </main>
+        <td> <a href="categoria-processa.php?acao=excluir&id=<?php echo $dado['CategoriaID'];?>">Excluir</a></td>
+    </tr>
+    <?php
+         }
+        }else{
+            ?>
+            <tr>
+                <td colspan="3">Resultado não encontrados</td>
+            </tr>
+            <?php
+             }
+            ?>
+            <tr>
 
+            <td colspan="3">Total de Registros:<?php echo $total;?></td>
+            </tr>
+            </table>
+    </main>
 <?php
-include_once './_footer.php';
+include_once '_footer.php';
 ?>
