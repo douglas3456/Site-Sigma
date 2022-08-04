@@ -27,18 +27,16 @@ include_once '_menu.php';
      <input type="text" id="nome" name="nome" value="<?php echo $dados['Nome'];?>"><br>
      <label for= "descricao">Descrição:</label><br>   
      <textarea  id="descricao" name="descicao"><?php echo $dados['Descricao'];?></textarea><br>
-     <label for="imagem">Imagem:</label><br>
-<?php
-if(!empty($dados['../content']) ) {
-?>
-<img src="../content<?php echo $dados['imagem'];?>" width="150"/><br>
-<input type="submit" value="Enviar">
-<?php
-}
-?>
-<input type="file" name="foto">
-     
-     <hr>
+     <label for="categoria">Categoria:</label><br>
+     <select name ="valor">
+         <?php
+         while ($dado = mysqli_fetch_array($resultado)){
+echo '<option value="' .$dado['CategoriaID'].'">'.$dado['Nome'].'</option>';
+
+         }
+     ?>
+     </select>
+         <hr>
 
      <input type="submit" value="Enviar">
 </form>

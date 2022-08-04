@@ -18,15 +18,17 @@ case'salvar':
     if($_FILES['foto']['size'] > 0){
         $uploaddir='./content/';
         $extensao = pathinfo($_FILES['foto']['name'], PATHINFO_EXTENSION);
-         $nomearquivo= $uploaddir . $nomearquivo;
+         $nomearquivo= 'categoria-'.$id.'-'.rand().'-'.$extensao;
+        $uploadfile = $umploaddir . $nomearquivo;
          move_uploaded_file($_FILES['foto']['tap_name'],$uploadfile);
     }else{
         $nomearquivo = $_poat['imagem'];
         }
         if ( isset($_GET['id'])  || empty($_GET['id']))
-        $sql= "INSERT INTO 'categorias'('Nome', 'Descricao','Imagem') VALUES ('".$nome.'",'".$descricao.'",'".$nomearquivo."')";
+        $sql= "INSERT INTO `categorias`(`Nome`, `Descricao`,`Imagem`) VALUES ('".$nome.'",'".$descricao.'",'".$nomearquivo."')";
         
-
+      }else{
+        $sql = "UPDATE 'categorias' SET `Nome`='".$nome.'",`Descricao`='".$descricao.'", `Imagem`='".$nomearquivo."' WHERE `CategoriaID`='".$id."' ";
     mysqli_query($conn,$sql);
   
     $sql="DELETE FROM categorias where CategoriaID=".$id;
