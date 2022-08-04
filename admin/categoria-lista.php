@@ -2,7 +2,7 @@
 include_once '../includes/_banco.php';
 include_once './_header.php';
 $sql = 'SELECT * FROM categorias';
-$resultado = mysqli_query($conexao,$sql);
+$resultado = mysqli_query($conn,$sql);
 $total = mysqli_num_rows($resultado);
 include_once './_menu.php';
 ?>
@@ -27,6 +27,7 @@ include_once './_menu.php';
         </tr>
     <?php
         }
+    
         if($resultado){
          while($dados = mysqli_fetch_array($resultado)){
          ?>
@@ -44,6 +45,7 @@ include_once './_menu.php';
             </tr>
             <?php
              }
+       }
             ?>
             <tr>
 

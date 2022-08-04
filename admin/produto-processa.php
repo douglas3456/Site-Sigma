@@ -8,7 +8,7 @@ switch ($acao){
     case 'escluir';
 
 $sql = "DELETE FROM produtos WHERE ProdutosID=".$id;
-mysqli_query($conexao,$sql);
+mysqli_query($conn,$sql);
 header('location:./produtos-lisa.php');
 break;
 case'salvar':
@@ -21,10 +21,10 @@ case'salvar':
         $sql= "UPDATE 'produtos' SET 'Nome'='.$Nome."','Descricao='".$descricao.'"WHERE 'ProdutosID='".$id."' " ;
     }
 
-    mysqli_query($conexao,$sql);
+    mysqli_query($conn,$sql);
   
     $sql="DELETE FROM produtos where ProdutosID=".$id;
-    mysqli_query($conexao,$sql);
+    mysqli_query($conn,$sql);
   header('loction: ./produtos-lista.php');
   
   break;
@@ -34,12 +34,12 @@ case'salvar':
   $nome=$_POST['Nome'];
   $descricao=$_POST['descricao'];
 
-  if( !isset($_POST['id'])  empty($_POST['id'])){
+  if ( isset($_GET['id'])  || empty($_GET['id'])){
       $sql= "INSERT Into 'categorias'('Nome','Descricao') VALUES ('".$nome."','".$descricao."')";
   }else{
     $sql= "UPDATE 'categorias'set'Nome'='".$nome."','Descricao'='".$descricao."'WHERE 'CatgoriasID'= '".$id."'";
   }
-  mysqli_query($conexao,$sql);
+  mysqli_query($conn,$sql);
   header('location: ./categoria-lista.php');
   break;
 }

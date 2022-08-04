@@ -2,7 +2,7 @@
 include_once '../includes/_banco.php';
 include_once './_header.php';
 $sql = 'SELECT * FROM produtos';
-$resultado = mysqli_query($conexao,$sql);
+$resultado = mysqli_query($conn,$sql);
 $total = mysqli_num_rows($resultado);
 include_once './_menu.php';
 ?>
@@ -21,7 +21,7 @@ include_once './_menu.php';
         While ($dado = mysqli_fetch_array($resultado)){
         ?>
         <tr>
-      <td><?php echo $dado ['ProdutoID'];?> </td>
+      <td><?php echo $dado ['produtoID'];?> </td>
       <td><a href="categoria-salvar.php?acao=salvar&id=<?php echo $dado['ProdutoID'];?>"><?php echo $dado['Nome'];?></td>
       <td><a href="categoria-processa.php?acao=escluir&id=<?php echo $dado['ProdutoID'];?>">Escluir</a></td>
         </tr>
@@ -31,12 +31,13 @@ include_once './_menu.php';
          while($dados = mysqli_fetch_array($resultado)){
          ?>
          <tr>
-        <td><?php echo $dado ['ProdutoID'];?></td> 
+        <td><?php echo $dado ['produtoID'];?></td> 
         <td> <a href="categoria-salvar.php?acao=salvar&id=<?php echo $dado['ProdutoID'];?>"><?php echo $dado['Nome'];?></td>
         <td> <a href="categoria-processa.php?acao=excluir&id=<?php echo $dado['ProdutoID'];?>">Excluir</a></td>
     </tr>
     <?php
          }
+        }
         }else{
             ?>
             <tr>

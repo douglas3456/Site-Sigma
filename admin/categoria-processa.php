@@ -1,5 +1,5 @@
 <?php
-include_once '../includes/_dados.php';
+include_once '../includes/_banco.php';
 
 $acao =  $_REQUEST['acao'];
 $id = $_REQUEST['id'];
@@ -8,23 +8,29 @@ switch ($acao){
     case 'escluir';
 
 $sql = "DELETE FROM categorias WHERE CategoriaID=".$id;
-mysqli_query($conexao,$sql);
-header('location:./categoria-lisa.php');
+mysqli_query($conn,$sql);
+header('location:./categoria-lista.php');
 break;
 case'salvar':
-    $nome= $_POST['Nome'];
+    $nome= $_POST['nome'];
     $descricao=$_POST['descricao'];
 
-    if(!isset($_POST['id'])  empty($_POST['id'])){
-        $sql= "INSERT INTO 'categorias'('Nome','Descricao')VALUES ('".$Nome.'",'".$descricao.'");
+    if($_FILES['foto']['size'] > 0){
+        $uploaddir='./content/';
+        $extensao = pathinfo($_FILES['foto']['name'], PATHINFO_EXTENSION);
+         $nomearquivo= $uploaddir . $nomearquivo;
+         move_uploaded_file($_FILES['foto']['tap_name'],$uploadfile);
     }else{
-        $sql= "UPDATE 'catgorias' SET 'Nome'='.$Nome."','Descricao='".$descricao.'"WHERE 'CategoriasID='".$id."' " ;
-    }
+        $nomearquivo = $_poat['imagem'];
+        }
+        if ( isset($_GET['id'])  || empty($_GET['id']))
+        $sql= "INSERT INTO 'categorias'('Nome', 'Descricao','Imagem') VALUES ('".$nome.'",'".$descricao.'",'".$nomearquivo."')";
+        
 
-    mysqli_query($conexao,$sql);
+    mysqli_query($conn,$sql);
   
     $sql="DELETE FROM categorias where CategoriaID=".$id;
-    mysqli_query($conexao,$sql);
+    mysqli_query($conn,$sql);
   header('loction: ./categoria-lista.php');
   
   break;
