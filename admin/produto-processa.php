@@ -5,41 +5,40 @@ $acao =  $_REQUEST['acao'];
 $id = $_REQUEST['id'];
 
 switch ($acao){
-    case 'escluir';
+    case 'excluir';
+        $sql = "DELETE FROM produtos WHERE ProdutosID=".$id;
+        mysqli_query($conn,$sql);
+        header('location:./produtos-lisa.php');
+    break;
 
-$sql = "DELETE FROM produtos WHERE ProdutosID=".$id;
-mysqli_query($conn,$sql);
-header('location:./produtos-lisa.php');
-break;
-case'salvar':
-    $nome= $_POST['Nome'];
-    $descricao=$_POST['descricao'];
+    case'salvar':
+        $nome= $_POST['Nome'];
+        $descricao=$_POST['descricao'];
 
-    if(!isset($_POST['id'])  empty($_POST['id'])){
-        $sql= "INSERT INTO 'Produtos'('Nome','Descricao')VALUES ('".$Nome.'",'".$descricao.'");
-    }else{
-        $sql= "UPDATE 'produtos' SET 'Nome'='.$Nome."','Descricao='".$descricao.'"WHERE 'ProdutosID='".$id."' " ;
-    }
+        if(!isset($_POST['id']) || empty($_POST['id'])){
+            $sql= "INSERT INTO 'Produtos'('Nome','Descricao') VALUES ('".$Nome."','".$descricao."')";
+        }else{
+            $sql= "UPDATE 'produtos' SET 'Nome'='".$Nome."','Descricao='".$descricao."' WHERE ProdutosID=".$id." )" ;
+        }
 
-    mysqli_query($conn,$sql);
-  
-    $sql="DELETE FROM produtos where ProdutosID=".$id;
-    mysqli_query($conn,$sql);
-  header('loction: ./produtos-lista.php');
-  
-  break;
+        mysqli_query($conn,$sql);
 
-  case 'salvar';
+        $sql="DELETE FROM produtos where ProdutosID=".$id;
+        mysqli_query($conn,$sql);
+        header('loction: ./produtos-lista.php');
+    break;
 
-  $nome=$_POST['Nome'];
-  $descricao=$_POST['descricao'];
+    case 'salvar';
 
-  if ( isset($_GET['id'])  || empty($_GET['id'])){
-      $sql= "INSERT Into 'categorias'('Nome','Descricao') VALUES ('".$nome."','".$descricao."')";
-  }else{
-    $sql= "UPDATE 'categorias'set'Nome'='".$nome."','Descricao'='".$descricao."'WHERE 'CatgoriasID'= '".$id."'";
-  }
-  mysqli_query($conn,$sql);
-  header('location: ./categoria-lista.php');
-  break;
+        $nome=$_POST['Nome'];
+        $descricao=$_POST['descricao'];
+
+        if ( isset($_GET['id'])  || empty($_GET['id'])){
+            $sql= "INSERT Into 'categorias'('Nome','Descricao') VALUES ('".$nome."','".$descricao."')";
+        }else{
+            $sql= "UPDATE 'categorias'set'Nome'='".$nome."','Descricao'='".$descricao."'WHERE 'CatgoriasID'= '".$id."'";
+        }
+        mysqli_query($conn,$sql);
+        header('location: ./produtos-lista.php');
+    break;
 }

@@ -1,11 +1,8 @@
 <?php
-include_once '../includes/_banco.php';
-include_once './_header.php';
-include_once './_menu.php';
-?>
+  session_start();
 
+  if( empty($_SESSION['LOGIN']) || !isset( $_SESSION['LOGIN']) ) {
 
+  }
 
-<?php
-include_once './_footer.php';
-?>
+  ?>

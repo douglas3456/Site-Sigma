@@ -1,4 +1,6 @@
 <?php
+Include_once 'usuario-salvar.php';
+
 include_once '../includes/_banco.php';
 include_once './_header.php';
 $sql = 'SELECT * FROM categorias';
@@ -8,7 +10,7 @@ include_once './_menu.php';
 ?>
 <main>
     <h2>Administração das Categor</h2>
-    <a href="categorias-salvar.php">Inserir</a>
+    <a href="categoria-salvar.php">Inserir</a>
     <hr>
     <table border="1">
         <tr>

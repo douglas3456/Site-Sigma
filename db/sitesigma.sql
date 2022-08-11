@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 14-Jul-2022 às 19:15
--- Versão do servidor: 10.4.22-MariaDB
--- versão do PHP: 7.4.27
+-- Tempo de geração: 11-Ago-2022 às 17:26
+-- Versão do servidor: 10.4.17-MariaDB
+-- versão do PHP: 7.3.27
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -30,6 +30,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `categorias` (
   `CategoriaID` int(11) NOT NULL,
   `Nome` varchar(100) NOT NULL,
+  `Descricao` varchar(200) NOT NULL,
   `Ativo` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -37,17 +38,19 @@ CREATE TABLE `categorias` (
 -- Extraindo dados da tabela `categorias`
 --
 
-INSERT INTO `categorias` (`CategoriaID`, `Nome`, `Ativo`) VALUES
-(1, 'gatinhos', 1),
-(2, 'cachorros\r\n', 1),
-(3, 'Animais', 1),
-(4, 'homens e mulheres', 1),
-(5, 'animais selvagens', 1),
-(6, 'Arte', 1),
-(7, 'Sem noção', 1),
-(8, 'comparação', 1),
-(9, 'presidencia', 1),
-(10, 'coisas do dia a dia', 1);
+INSERT INTO `categorias` (`CategoriaID`, `Nome`, `Descricao`, `Ativo`) VALUES
+(1, 'gatinhos', '', 1),
+(2, 'cachorros\r\n', '', 1),
+(3, 'Animais', '', 1),
+(4, 'homens e mulheres', '', 1),
+(5, 'animais selvagens', '', 1),
+(6, 'Arte', '', 1),
+(7, 'Sem noção', '', 1),
+(8, 'comparação', '', 1),
+(9, 'presidencia', '', 1),
+(10, 'coisas do dia a dia', '', 1),
+(11, 'ww', 'ww', 0),
+(12, 'ww', 'ww', 0);
 
 -- --------------------------------------------------------
 
@@ -125,7 +128,7 @@ ALTER TABLE `produtos`
 -- AUTO_INCREMENT de tabela `categorias`
 --
 ALTER TABLE `categorias`
-  MODIFY `CategoriaID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `CategoriaID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT de tabela `produtos`

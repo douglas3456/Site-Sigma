@@ -1,13 +1,12 @@
 <?php
 include_once '../includes/_banco.php';
-include_once '../includes/_head.php';
+include_once '_header.php';
 
-if ( isset($_GET['id'])  || empty($_GET['id'])){
- 
-$id = $_GET['id'];
-$sql = "SELECT * FROM categorias WHERE CategoriaID = ".$id;
-$resultado = mysqli_query($conn,$sql);
-$dados= mysqli_fetch_array($resultado,MYSQLI_ASSOC);    
+if ( isset($_GET['id']) && !empty($_GET['id'])){ 
+    $id = $_GET['id'];
+    $sql = "SELECT * FROM categorias WHERE CategoriaID = ".$id;
+    $resultado = mysqli_query($conn,$sql);
+    $dados= mysqli_fetch_array($resultado,MYSQLI_ASSOC);    
 }else{
     $id='';
     $dados['Nome'] = '';
@@ -26,7 +25,7 @@ include_once '_menu.php';
      <label for= "nome">Nome:</label><br>   
      <input type="text" id="nome" name="nome" value="<?php echo $dados['Nome'];?>"><br>
      <label for= "descricao">Descrição:</label><br>   
-     <textarea  id="descricao" name="descicao"><?php echo $dados['Descricao'];?></textarea><br>
+     <textarea  id="descricao" name="descricao"><?php echo $dados['Descricao'];?></textarea><br>
      <hr>
 
      <input type="submit" value="Enviar">

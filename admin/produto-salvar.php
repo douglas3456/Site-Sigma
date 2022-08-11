@@ -30,10 +30,10 @@ include_once '_menu.php';
      <label for="categoria">Categoria:</label><br>
      <select name ="valor">
          <?php
-         while ($dado = mysqli_fetch_array($resultado)){
+
 echo '<option value="' .$dado['CategoriaID'].'">'.$dado['Nome'].'</option>';
 
-         }
+        
      ?>
      </select>
          <hr>
