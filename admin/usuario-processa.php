@@ -2,7 +2,7 @@
 
 session_start();
 
-include_once '../includes/_dados.php';
+include_once '../includes/_banco.php';
 
 $acao = $_REQUEST['acao'];
 
@@ -22,7 +22,7 @@ switch ($acao) {
     $senha = $_POST['senha'];
 
     $sql = "SELECT * FROM usuarios WHERE Email = '".$email."'AND senha = '".$senha."' ";
-    $resultado = mysqli_query($conexao,$sql);
+    $resultado = mysqli_query($conn,$sql);
     $dados = mysqli_fetch_array($resultado,MYSQLI_ASSOC);
 
     if (!empty($dados)) {

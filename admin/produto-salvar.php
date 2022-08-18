@@ -17,7 +17,7 @@ $dados= mysqli_fetch_array($resultado,MYSQLI_ASSOC);
 include_once '_menu.php';
 ?>
 <main>
-    <h2>administração das categorias</h2>
+    <h2>administração dos Produtos</h2>
     <a href="produto-lista.php">Listagem</a>
     <hr>
     <form action="produto-processa.php"method="post" enctype="multipart/form-data">
@@ -30,10 +30,14 @@ include_once '_menu.php';
      <label for="categoria">Categoria:</label><br>
      <select name ="valor">
          <?php
-
-echo '<option value="' .$dado['CategoriaID'].'">'.$dado['Nome'].'</option>';
-
-        
+$sqlCat = "SELECT * FROM categorias";
+$resultado = mysqli_query($conn,$sqlCat);
+$total = mysqli_num_rows($resultado);
+   if ($resultado){
+        while ($dado = mysqli_fetch_array($resultado)){
+            echo '<option value="' .$dado['CategoriaID'].'">'.$dado['Nome'].'</option>';
+        }
+   }
      ?>
      </select>
          <hr>

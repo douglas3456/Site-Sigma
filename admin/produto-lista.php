@@ -7,7 +7,7 @@ $total = mysqli_num_rows($resultado);
 include_once './_menu.php';
 ?>
 <main>
-    <h2>Administração das Categor</h2>
+    <h2>Administração de produtso</h2>
     <a href="produto-salvar.php">Inserir</a>
     <hr>
     <table border="1">
