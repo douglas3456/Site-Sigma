@@ -9,7 +9,7 @@ $total = mysqli_num_rows($resultado);
 include_once './_menu.php';
 ?>
 <main>
-    <h2>Administração das Categor</h2>
+    <h2>Administração das Categoria</h2>
     <a href="categoria-salvar.php">Inserir</a>
     <hr>
     <table border="1">
@@ -25,7 +25,7 @@ include_once './_menu.php';
         <tr>
       <td><?php echo $dado ['CategoriaID'];?> </td>
       <td><a href="categoria-salvar.php?acao=salvar&id=<?php echo $dado['CategoriaID'];?>"><?php echo $dado['Nome'];?></td>
-      <td><a href="categoria-processa.php?acao=escluir&id=<?php echo $dado['CategoriaID'];?>">Escluir</a></td>
+      <td><a href="categoria-processa.php?acao=excluir&id=<?php echo $dado['CategoriaID'];?>">Excluir</a></td>
         </tr>
     <?php
         }

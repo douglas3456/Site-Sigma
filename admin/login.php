@@ -1,11 +1,11 @@
 <?php
 
-include_once '_head.php';
+include_once '_header.php';
 
 ?>
 
 <main>
-<h2> administração dos produtos </h2>
+<h2> cadastro de usuario</h2>
 
 <?php
 
@@ -21,7 +21,7 @@ $mensagem = array(
  }
 ?>
 
- <h3><?php echo $mensagem[$cod];?></h3>
+ <h3><?php echo $mensagem [$cod];?></h3>
 
 <form action="usuario-processa.php" method="post">
   <input type="hidden" value="login" name="acao"><br>

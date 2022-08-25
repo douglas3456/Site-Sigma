@@ -29,7 +29,7 @@ while ($dados = mysqli_fetch_assoc($exec) ) {
   <div class="card-body">
     <h5 class="card-title"><?php echo $dados  ['Nome'];?></h5>
     <p class="card-text"><?php echo $dados ['Descricao'];?></p>
-    <a href="produto-detalhe.php?id=<?php echo $dados['ProdutoID'];?>&tipo=promocao" class="btn btn-primary">comprar</a>
+    <a href="produto-detalhe.php?id=<?php echo $dados['produtoID'];?>&tipo=promocao" class="btn btn-primary">comprar</a>
   </div>
 </div>
 

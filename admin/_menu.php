@@ -12,7 +12,12 @@
                 <li class="nav-item">
                     <a class="nav-link" href="./categoria-lista.php">Categoria</a>
                 </li>
-
+                <li class="nav-item">
+                    <a class="nav-link" href="./usuario-processa.php?acao=logoff">logoff</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./login.php">login</a>
+                </li>
             </ul>
         </div>
     </nav>

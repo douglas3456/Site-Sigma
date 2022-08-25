@@ -21,7 +21,9 @@ include_once '_menu.php';
     <a href="produto-lista.php">Listagem</a>
     <hr>
     <form action="produto-processa.php"method="post" enctype="multipart/form-data">
-     <input type="text" value="salvar" name="acao">   
+     <input type="text" value="salvar" name="acao"> 
+     <input type="text"  value="<?php echo $dados['Imagem'];?>" name="imagem">
+     <input typr="hidden" value="salvar" name="acao">
      <input type="text"  name="id" value="<?php echo $id;?>"><br>
      <label for= "nome">Nome:</label><br>   
      <input type="text" id="nome" name="nome" value="<?php echo $dados['Nome'];?>"><br>
@@ -30,18 +32,28 @@ include_once '_menu.php';
      <label for="categoria">Categoria:</label><br>
      <select name ="valor">
          <?php
+
 $sqlCat = "SELECT * FROM categorias";
 $resultado = mysqli_query($conn,$sqlCat);
 $total = mysqli_num_rows($resultado);
-   if ($resultado){
+
+if ( !empty($dado['imagem'] )) {
+?>
+<img src=".../imagens/categorias/<?php echo $dados['Imagem'];?>"width="150" /><br>
+
+<?php
+}
+
+if ($resultado){
         while ($dado = mysqli_fetch_array($resultado)){
             echo '<option value="' .$dado['CategoriaID'].'">'.$dado['Nome'].'</option>';
         }
-   }
-     ?>
+}
+   ?>
+   
      </select>
          <hr>
-
+      <input type="file" name="foto">
      <input type="submit" value="Enviar">
 </form>
 
