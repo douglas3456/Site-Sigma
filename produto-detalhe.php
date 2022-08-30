@@ -8,14 +8,18 @@ include_once './includes/_banco.php';
 
 $id = $_GET ['id'];
 $tipo = $_GET['tipo'];
+
+$sql = "SELECT * FROM produtos WHERE ProdutoID = ".$id;
+$resultado = mysqli_query($conn,$sql);
+$dados= mysqli_fetch_array($resultado,MYSQLI_ASSOC);  
 ?>
 <div class="container mt-5">
     <div class= "row">
         <div class="col">
-<h1><?php echo $produtos[$id]['nome'] ;?></h1>
-<img src="./content/<?php echo $produtos[$id]['imagem'];?>">
-<h1><?php echo $produtos[$id]['preco'] ;?></h1>
-<p>descrição <?php echo $produtos[$id]['descricao'] ;?></p>
+<h1><?php echo $dados['Nome'] ;?></h1>
+<img src="./content/<?php echo $dados[$id]['imagem'];?>">
+<h1><?php echo $dados[$id]['preco'] ;?></h1>
+<p>descrição <?php echo $dados[$id]['Descricao'] ;?></p>
 </div>
 </div>
 
